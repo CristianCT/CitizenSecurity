@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import MapView from 'react-native-maps';
+import  MapView, { Marker }  from 'react-native-maps';
 import { View, StyleSheet, ScrollView, Text, Image, Dimensions } from "react-native";
 
 
@@ -13,7 +13,30 @@ export default function Home(props) {
             
             
             <View style={styles.container}>
-                <MapView style={styles.map} />
+                <MapView 
+                initialRegion={{
+                    latitude: 10.405610,
+                    longitude: -75.491483,
+                    latitudeDelta: 0.0922,
+                    longitudeDelta: 0.0421,
+                }} 
+                style={styles.map}>
+                    <Marker 
+                        coordinate={{ latitude: 10.405610, longitude: -75.491483 }}
+                        image={{ uri: 'https://developers.google.com/maps/documentation/javascript/images/default-marker.png' }}
+                        title="Marcador"
+                        description="Puta descripción" />
+                    <Marker 
+                        coordinate={{ latitude: 10.405610, longitude: -75.481483 }}
+                        image={{ uri: 'https://developers.google.com/maps/documentation/javascript/images/default-marker.png' }}
+                        title="Marcador"
+                        description="Puta descripción" />
+                    <Marker 
+                        coordinate={{ latitude: 10.415610, longitude: -75.491483 }}
+                        image={{ uri: 'https://developers.google.com/maps/documentation/javascript/images/default-marker.png' }}
+                        title="Marcador"
+                        description="Puta descripción" />
+                </MapView>
             </View>
         </View>
     )

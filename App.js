@@ -3,17 +3,14 @@ import { StyleSheet } from 'react-native';
 import { NavigationContainer, StackRouter } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'; /* https://github.com/oblador/react-native-vector-icons/blob/master/glyphmaps/MaterialCommunityIcons.json */
 
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
 
-/* import Search from './screens/Search';
+import News from './screens/News';
 import Home from './screens/Home';
-import Profile from './screens/Profile'; 
-import Details from './screens/Details';
-import VideoPlayerView from './components/VideoPlayerView'; */
-import Home from './screens/Home';
+import Profile from './screens/Profile'
 
 function MainScreens() {
   return (
@@ -21,16 +18,16 @@ function MainScreens() {
       initialRouteName = "Home"
       activeColor = "#005FAC"
       inactiveColor = "#3F5C6C"
-      barStyle = { { backgroundColor : '#ffff' } } 
+      barStyle = {{ backgroundColor : '#ffff' }} 
     > 
     
       <Tab.Screen 
-        name = "Search"
-        component = { Home }
+        name = "News"
+        component = { News }
         options = { {
-          tabBarLabel : 'Search' , 
+          tabBarLabel : 'News' , 
           tabBarIcon : ({ color }) => (   
-            <MaterialCommunityIcons name = "magnify" color = { color } size = { 26 } /> 
+            <MaterialCommunityIcons name = "newspaper" color = { color } size = { 26 } /> 
           ),
         }}
       />
@@ -48,7 +45,7 @@ function MainScreens() {
 
       <Tab.Screen 
         name = "Profile"
-        component = { Home }
+        component = { Profile }
         options = { {
           tabBarLabel : 'Profile' , 
           tabBarIcon : ({ color }) => (   
