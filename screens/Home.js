@@ -1,7 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import  MapView, { Marker }  from 'react-native-maps';
-import { View, StyleSheet, Text, Image, Dimensions } from "react-native";
+import  MapView from 'react-native-maps';
+import { View, StyleSheet, Text, Image, Dimensions, Pressable} from "react-native";
+
+import Marker from '../components/Custom.marker';
 
 export default function Home({ navigation }) {
     return (
@@ -18,26 +20,14 @@ export default function Home({ navigation }) {
                     longitudeDelta: 0.0421,
                 }} 
                 style={styles.map}>
-                    <Marker 
-                        coordinate={{ latitude: 10.405610, longitude: -75.491483 }}
-                        image={{ uri: 'https://developers.google.com/maps/documentation/javascript/images/default-marker.png' }}
-                        title="Marcador"
-                        description="Puta descripción" 
-                        onPress={ console.log("Marcador") }/>
-                    <Marker 
-                        coordinate={{ latitude: 10.405610, longitude: -75.481483 }}
-                        image={{ uri: 'https://developers.google.com/maps/documentation/javascript/images/default-marker.png' }}
-                        title="Marcador"
-                        description="Puta descripción"
-                        onPress={ console.log("Marcador") } />
-                    <Marker 
-                        coordinate={{ latitude: 10.415610, longitude: -75.491483 }}
-                        image={{ uri: 'https://developers.google.com/maps/documentation/javascript/images/default-marker.png' }}
-                        title="Marcador"
-                        description="Puta descripción" 
-                        onPress={ console.log("Marcador") }/>
+                    <Marker coordinate={{ latitude: 10.405610, longitude: -75.491483 }} />
+                    <Marker coordinate={{ latitude: 10.405610, longitude: -75.481483 }} />
+                    <Marker coordinate={{ latitude: 10.415610, longitude: -75.491483 }} />
                 </MapView>
             </View>
+            <Pressable style={ styles.buttonAdd } onPress={ console.log('A') }>
+                <Text>A</Text>
+            </Pressable>
         </View>
     )
 }
@@ -62,5 +52,14 @@ const styles = StyleSheet.create({
     logoHome: {
         height: 50,
         width: 300
+    },
+    buttonAdd: {
+        position: 'absolute',
+        right: 20,
+        top: Dimensions.get('window').height - 35,
+        width: 150,
+        height: 150,
+        color: 'blue',
+        borderRadius: 50,
     }
 });
