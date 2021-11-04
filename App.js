@@ -71,18 +71,6 @@ function MyStack () {
         component = { MainScreens }
         options = {{ title:"MainScreens" }}
       />
-
-      <Stack.Screen 
-        name = "Details"
-        component = { Home }
-        options = {{ title:"details" }}
-      /> 
-
-      <Stack.Screen 
-        name = "VideoPlayerView"
-        component = { Home }
-        options = {{ title:"videoPlayerView" }}
-      /> 
     </Stack.Navigator>
   )
 }

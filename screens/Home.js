@@ -1,17 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import  MapView, { Marker }  from 'react-native-maps';
-import { View, StyleSheet, ScrollView, Text, Image, Dimensions } from "react-native";
+import { View, StyleSheet, Text, Image, Dimensions } from "react-native";
 
-
-export default function Home(props) {
+export default function Home({ navigation }) {
     return (
         <View style={{ flex: 1 }}>
              <View style={styles.headerHome}>
                 <Image style={styles.logoHome} source={ require('../assets/logo.png') } resizeMode="cover" />
             </View> 
-            
-            
             <View style={styles.container}>
                 <MapView 
                 initialRegion={{
@@ -25,17 +22,20 @@ export default function Home(props) {
                         coordinate={{ latitude: 10.405610, longitude: -75.491483 }}
                         image={{ uri: 'https://developers.google.com/maps/documentation/javascript/images/default-marker.png' }}
                         title="Marcador"
-                        description="Puta descripción" />
+                        description="Puta descripción" 
+                        onPress={ console.log("Marcador") }/>
                     <Marker 
                         coordinate={{ latitude: 10.405610, longitude: -75.481483 }}
                         image={{ uri: 'https://developers.google.com/maps/documentation/javascript/images/default-marker.png' }}
                         title="Marcador"
-                        description="Puta descripción" />
+                        description="Puta descripción"
+                        onPress={ console.log("Marcador") } />
                     <Marker 
                         coordinate={{ latitude: 10.415610, longitude: -75.491483 }}
                         image={{ uri: 'https://developers.google.com/maps/documentation/javascript/images/default-marker.png' }}
                         title="Marcador"
-                        description="Puta descripción" />
+                        description="Puta descripción" 
+                        onPress={ console.log("Marcador") }/>
                 </MapView>
             </View>
         </View>
