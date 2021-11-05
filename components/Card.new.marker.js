@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, Pressable } from 'react-native';
 import { Avatar } from 'react-native-paper';
 
 export default function CardNewMarker() {
     return (
-        <View style={ styles.card }>
+        <View onPress={ () => console.log('Pra') } style={ styles.card }>
             <View style={ styles.header }>
                 <View>
                     <Avatar.Image 

@@ -1,10 +1,21 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from 'react';
+import { View, Text, ScrollView } from 'react-native';
+import NewUser from '../components/New.user';
 
 export default function HistoryProfile() {
     return (
-        <View  style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>History Profile</Text>
-        </View>
+        <ScrollView>
+            <NewUser/>
+            <NewUser/>
+            <NewUser/>
+            <NewUser/>
+            <NewUser/>
+            <NewUser/>
+            <NewUser/>
+            <NewUser/>
+            <NewUser/>
+            <NewUser/>
+            <NewUser/>
+        </ScrollView>
     )
 }

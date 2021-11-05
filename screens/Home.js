@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import  MapView from 'react-native-maps';
+import  MapView, { Marker, Circle } from 'react-native-maps';
 import { View, StyleSheet, Text, Image, Dimensions, Pressable, Alert, Modal} from "react-native";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import Marker from '../components/Custom.marker';
+import CustomMarker from '../components/Custom.marker';
 import NewAdd from '../components/New.add';
 
 export default function Home({ navigation }) {
@@ -35,16 +35,52 @@ export default function Home({ navigation }) {
             </Modal>
             <View style={styles.container}>
                 <MapView 
-                initialRegion={{
-                    latitude: 10.405610,
-                    longitude: -75.491483,
-                    latitudeDelta: 0.0922,
-                    longitudeDelta: 0.0421,
-                }} 
-                style={styles.map}>
-                    <Marker coordinate={{ latitude: 10.405610, longitude: -75.491483 }} />
-                    <Marker coordinate={{ latitude: 10.405610, longitude: -75.481483 }} />
-                    <Marker coordinate={{ latitude: 10.415610, longitude: -75.491483 }} />
+                    initialRegion={{
+                        latitude: 10.405610,
+                        longitude: -75.491483,
+                        latitudeDelta: 0.0922,
+                        longitudeDelta: 0.0421,
+                    }} 
+                    style={styles.map}>
+                        <Marker
+                            coordinate={{ latitude: 10.39610, longitude: -75.49183, }}
+                            image={ require('../assets/CS-Marker.png') }
+                            title="Marcador"
+                            description="Puta descripción"
+                            onSelect={() => console.log("coordinate")}
+                            onDrag={() => console.log("coordinate")}
+                            onDragStart={() => console.log("coordinate")}
+                            onDragEnd={() => console.log("coordinate")}
+                            draggable    
+                        >
+                        </Marker>
+                        <CustomMarker coordinate={{ latitude: 10.405610, longitude: -75.491483 }} />
+                        <Circle
+                            center={{ latitude: 10.405610, longitude: -75.491483 }}
+                            radius={ 700 }
+                            fillColor="rgba(255, 0, 0, 0.2)"
+                            strokeColor="rgba(255, 0, 0, 0.2)"
+                            zIndex={2}
+                            strokeWidth={2}
+                        />
+                        <CustomMarker coordinate={{ latitude: 10.405610, longitude: -75.481483 }} />
+                        <Circle
+                            center={{ latitude: 10.405610, longitude: -75.481483 }}
+                            radius={ 700 }
+                            fillColor="rgba(255, 0, 0, 0.2)"
+                            strokeColor="rgba(255, 0, 0, 0.2)"
+                            zIndex={2}
+                            strokeWidth={2}
+                        />
+                        <CustomMarker coordinate={{ latitude: 10.415610, longitude: -75.491483 }} />
+                        <Circle
+                            center={{ latitude: 10.415610, longitude: -75.491483 }}
+                            radius={ 700 }
+                            fillColor="rgba(0, 255, 0, 0.2)"
+                            strokeColor="rgba(0, 255, 0, 0.2)"
+                            zIndex={2}
+                            strokeWidth={2}
+                        />
                 </MapView>
             </View>
             <Pressable style={ styles.buttonAdd } onPress={ () => {setModalVisible(true)} }>
@@ -130,3 +166,4 @@ const styles = StyleSheet.create({
         textAlign: "center"
       }
 });
+/* https://www.youtube.com/watch?v=K2fXs6ghlig&ab_channel=MarioD%C3%ADez */

@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text, TextInput, Pressable } from 'react-native'
+import { StyleSheet, View, Text, TextInput, Pressable } from 'react-native';
+import { Slider } from 'react-native-elements';
 
 export default function NewAdd() {
     return (
@@ -12,6 +13,10 @@ export default function NewAdd() {
                 <TextInput multiline={ true } style={ styles.textArea } />
                 <Text>Link</Text>
                 <TextInput style={ styles.inputLarge } placeholder="Link"/>
+            </View>
+            <View>
+                <Text style={{ justifyContent: 'center' }}>How true is this new?</Text>
+                <Slider onValueChange={() => console.log('value')} thumbStyle={{ width: 20, height: 20, backgroundColor: '#367EB7' }} />
             </View>
             <View>
                 <Pressable

@@ -1,9 +1,9 @@
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Image, View, Text, TextInput } from 'react-native';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Slider } from 'react-native-elements';
+import { View, StyleSheet, Image, Text, Dimensions } from "react-native";
 
-export default function New() {
+
+export default function NewUser(props) {
     return (
         <View style={ styles.card }>
             <View style={ styles.cardContent }>
@@ -18,14 +18,6 @@ export default function New() {
                     </View>
                 </View>
             </View> 
-            <View style={{ flexDirection: 'row', alignContent: 'center', marginLeft: 10, marginRight: 10 }}>
-                <TextInput style={ styles.inputComment } placeholder="Comment" />
-                <MaterialCommunityIcons name = "send" color="#367EB7" size = { 30 } /> 
-            </View>
-            <View>
-                <Text style={{ justifyContent: 'center' }}>How true is this new?</Text>
-                <Slider onValueChange={() => console.log('value')} thumbStyle={{ width: 20, height: 20, backgroundColor: '#367EB7' }} />
-            </View>
         </View> 
     )
 }
@@ -66,15 +58,5 @@ const styles = StyleSheet.create({
     },
     footerText: {
         fontSize: 10,
-    },
-    inputComment: {
-        borderColor: '#000000',
-        borderWidth: 1,
-        borderRadius: 15,
-        paddingLeft: 10,
-        paddingRight: 10,
-        width: 340,
-        marginRight: 5,
-        marginBottom: 10
     },
 });

@@ -52,7 +52,7 @@ export default function DrawerProfile(props) {
                                 />
                             )}
                             label="Home"
-                            onPress={() => {props.navigation.navigate('Home')}}
+                            onPress={() => {props.navigation.navigate('Login')}}
                         />
                         <DrawerItem 
                             icon={({color, size}) => (

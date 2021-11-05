@@ -12,6 +12,11 @@ import News from './screens/News';
 import Home from './screens/Home';
 import Profile from './screens/Profile'
 
+import LoginScreen from './screens/Login.screen';
+import RegisterScreen from './screens/Register.screen';
+
+
+
 function MainScreens() {
   return (
     <Tab.Navigator
@@ -43,22 +48,22 @@ function MainScreens() {
         }}
       />
 
-      <Tab.Screen 
-        name = "Profile"
-        component = { Profile }
-        options = { {
-          tabBarLabel : 'Profile' , 
-          tabBarIcon : ({ color }) => (   
-            <MaterialCommunityIcons name = "account" color = { color } size = { 26 } /> 
-          ),
-        }}
-      />
+      {
+        <Tab.Screen 
+          name = "Profile"
+          component = { Profile }
+          options = { {
+            tabBarLabel : 'Profile' , 
+            tabBarIcon : ({ color }) => (   
+              <MaterialCommunityIcons name = "account" color = { color } size = { 26 } /> 
+            ),
+          }}
+        />
+      }
 
     </Tab.Navigator>
   )
 }
-
-
 
 function MyStack () {
   return(
@@ -70,6 +75,18 @@ function MyStack () {
         name = "MainScreens"
         component = { MainScreens }
         options = {{ title:"MainScreens" }}
+      />
+
+      <Stack.Screen 
+        name = "Login"
+        component = { LoginScreen }
+        options = {{ title:"Login" }}
+      />
+
+      <Stack.Screen 
+        name = "Register"
+        component = { RegisterScreen }
+        options = {{ title:"Register" }}
       />
     </Stack.Navigator>
   )
