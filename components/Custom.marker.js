@@ -13,15 +13,33 @@ export default function CustomMarker(props) {
                 image={ require('../assets/Map-Marker.png') }
                 title="Marcador"
                 description="Puta descripción"
-                onPress={ ()=> {} }
                 >
                     <Callout >
-                        <CardNewMarker/>
-                        <CardNewMarker/>
-                        <CardNewMarker/>
-                        <CardNewMarker/>
+                        <CardNewMarker
+                          newInformation={{
+                            title: 'Atraco a mano armada en Socorro',
+                            description: 'El atraco fue realizado con arma blanca'
+                          }}
+                        />
+                        <CardNewMarker
+                          newInformation={{
+                            title: 'Robo en Medellín',
+                            description: 'Grupo de 20 personas intentaron atracar'
+                          }}
+                        />
+                        <CardNewMarker
+                          newInformation={{
+                            title: 'Asaltante dispara a dueño de tienda',
+                            description: 'El hecho ocurrio a las 8:00 am de ayer'
+                          }}
+                        />
+                        <CardNewMarker
+                          newInformation={{
+                            title: 'Secuestro a menor en el Pozón',
+                            description: 'El menor fue visto por ultima vez en la terraza de su casa'
+                          }}
+                        />
                     </Callout>
-                    
             </Marker>
     )
 }

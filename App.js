@@ -1,9 +1,12 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { NavigationContainer, StackRouter } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'; /* https://github.com/oblador/react-native-vector-icons/blob/master/glyphmaps/MaterialCommunityIcons.json */
+
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -14,8 +17,6 @@ import Profile from './screens/Profile'
 
 import LoginScreen from './screens/Login.screen';
 import RegisterScreen from './screens/Register.screen';
-
-
 
 function MainScreens() {
   return (
@@ -91,12 +92,22 @@ function MyStack () {
     </Stack.Navigator>
   )
 }
+const initialState = {
+  isAuthenticated: false
+}
+const reducer = (state = initialState) =>{
+  return state;
+}
+
+const store = createStore(reducer);
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <MyStack/>
-    </NavigationContainer>
+    <Provider store={createStore(reducer)} >
+      <NavigationContainer>
+        <MyStack/>
+      </NavigationContainer>
+    </Provider>
   )
 }
 
@@ -111,3 +122,4 @@ const styles = StyleSheet.create({
     marginTop: 50, /* Margen superior -> Prueba */
   },
 });
+/* https://www.youtube.com/watch?v=d0F17-q445U&ab_channel=MarioD%C3%ADez */

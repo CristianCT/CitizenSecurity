@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleSheet, View, Text, Image, Pressable } from 'react-native';
 import { Avatar } from 'react-native-paper';
 
-export default function CardNewMarker() {
+export default function CardNewMarker(props) {
     return (
-        <View onPress={ () => console.log('Pra') } style={ styles.card }>
+        <View style={ styles.card }>
             <View style={ styles.header }>
                 <View>
                     <Avatar.Image 
@@ -13,14 +13,14 @@ export default function CardNewMarker() {
                     />
                 </View>
                 <View style={{ marginLeft: 5 }}>
-                    <Text style={{ fontSize: 23 }}>Title New</Text>
+                    <Text style={{ fontSize: 23 }}>{ props.newInformation.title }</Text>
                     <Text>Username</Text>
                 </View>
             </View>
             
             <View>
                 <Text>
-                    Lorem Ipsum has been the industry's Lorem {"\n"} Lorem Ipsum has been the industry's Lorem {"\n"} Lorem Ipsum has been the industry's Lorem
+                    { props.newInformation.description }
                 </Text>
             </View>
         </View>

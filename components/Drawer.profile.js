@@ -5,9 +5,7 @@ import {
     Title,
     Caption,
     Paragraph,
-    Drawer,
-    Text,
-    TouchableRipple
+    Drawer
 } from 'react-native-paper';
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 
@@ -52,7 +50,7 @@ export default function DrawerProfile(props) {
                                 />
                             )}
                             label="Home"
-                            onPress={() => {props.navigation.navigate('Login')}}
+                            onPress={() => {props.navigation.navigate('Home')}}
                         />
                         <DrawerItem 
                             icon={({color, size}) => (
